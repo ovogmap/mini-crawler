@@ -26,38 +26,39 @@ function RecipeList({
           </Button>
         }
       />
-
-      <ScrollArea className="flex-1">
-        <div className="p-4 space-y-3">
-          {recipes.length === 0 ? (
-            <div className="border-2 border-dashed rounded-xl h-60 flex flex-col items-center justify-center p-6 text-center">
-              <div className="bg-muted rounded-full p-3 mb-3">
-                <MousePointerClick className="w-6 h-6 text-muted-foreground" />
+      <main className="flex-1 flex flex-col min-h-0">
+        <ScrollArea className="flex-1">
+          <div className="p-4 space-y-3">
+            {recipes.length === 0 ? (
+              <div className="border-2 border-dashed rounded-xl h-60 flex flex-col items-center justify-center p-6 text-center">
+                <div className="bg-muted rounded-full p-3 mb-3">
+                  <MousePointerClick className="w-6 h-6 text-muted-foreground" />
+                </div>
+                <p className="text-sm font-medium">No recipes found</p>
               </div>
-              <p className="text-sm font-medium">No recipes found</p>
-            </div>
-          ) : (
-            <>
-              {recipes.map((i) => (
-                <Card
-                  key={i}
-                  className="hover:border-primary cursor-pointer transition-colors"
-                >
-                  <CardContent className="p-4 flex justify-between items-center">
-                    <div>
-                      <p className="font-medium text-sm">Ninehire 수집 {i}</p>
-                      <p className="text-xs text-muted-foreground">
-                        Updated: 2026.01.31
-                      </p>
-                    </div>
-                    <ChevronRight className="w-4 h-4 text-muted-foreground" />
-                  </CardContent>
-                </Card>
-              ))}
-            </>
-          )}
-        </div>
-      </ScrollArea>
+            ) : (
+              <>
+                {recipes.map((i) => (
+                  <Card
+                    key={i}
+                    className="hover:border-primary cursor-pointer transition-colors"
+                  >
+                    <CardContent className="p-4 flex justify-between items-center">
+                      <div>
+                        <p className="font-medium text-sm">Ninehire 수집 {i}</p>
+                        <p className="text-xs text-muted-foreground">
+                          Updated: 2026.01.31
+                        </p>
+                      </div>
+                      <ChevronRight className="w-4 h-4 text-muted-foreground" />
+                    </CardContent>
+                  </Card>
+                ))}
+              </>
+            )}
+          </div>
+        </ScrollArea>
+      </main>
     </Layout>
   );
 }
