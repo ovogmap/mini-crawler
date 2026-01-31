@@ -1,12 +1,16 @@
 import { defineConfig } from 'wxt';
 import { resolve } from 'node:path';
+import tailwindcss from '@tailwindcss/vite';
 
 // See https://wxt.dev/api/config.html
 export default defineConfig({
+  srcDir: 'src',
   modules: ['@wxt-dev/module-react'],
+  vite: () => ({
+    plugins: [tailwindcss()],
+  }),
   alias: {
-    // @ 별칭을 루트 디렉토리로 설정하여 @/assets/react.svg 같은 import가 작동하도록 함
-    '@': resolve('.'),
+    '@': resolve('./src'),
   },
   manifest: {
     permissions: ['sidePanel', 'storage', 'tabs'], // sidePanel 권한 필수
