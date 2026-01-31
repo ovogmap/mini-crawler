@@ -18,7 +18,7 @@ importers:
         specifier: 5.9.2
         version: 5.9.2
 
-  apps/extensions:
+  apps/extension:
     dependencies:
       react:
         specifier: ^19.2.3
@@ -27,6 +27,9 @@ importers:
         specifier: ^19.2.3
         version: 19.2.3(react@19.2.3)
     devDependencies:
+      '@my-scraper/eslint-config':
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
       '@my-scraper/typescript-config':
         specifier: workspace:*
         version: link:../../packages/typescript-config

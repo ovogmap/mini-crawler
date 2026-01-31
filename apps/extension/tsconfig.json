@@ -1,6 +1,9 @@
 {
-  "extends": "@my-scraper/typescript-config/base.json",
-  "compilerOptions": {
-    "jsx": "react-jsx"
-  }
+  "extends": "@my-scraper/typescript-config/react-vite.json",
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "vite-env.d.ts",
+    ".wxt/wxt.d.ts"
+  ]
 }
