@@ -1,12 +1,20 @@
 {
   "name": "@my-scraper/eslint-config",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "private": true,
+  "type": "module",
+  "main": "./base.js",
+  "files": ["base.js", "next.js", "react-vite.js"],
+  "dependencies": {
+    "@eslint/js": "^9.39.1",
+    "eslint-config-next": "16.1.6",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "typescript-eslint": "^8.46.4"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "peerDependencies": {
+    "eslint": "^9",
+    "typescript": "^5"
+  }
 }
