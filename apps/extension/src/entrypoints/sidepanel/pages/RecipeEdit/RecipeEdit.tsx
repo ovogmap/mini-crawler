@@ -15,14 +15,13 @@ function RecipeEdit({
   const form = useForm<{ steps: Step[] }>({
     defaultValues: { steps: [] },
   });
-  const { control, watch } = form;
+  const { control } = form;
 
   const { fields, append, remove } = useFieldArray({
     control,
     name: "steps",
   });
 
-  console.log(watch("steps"));
   return (
     <Layout>
       <Header
@@ -76,7 +75,7 @@ function RecipeEdit({
               <FormProvider {...form}>
                 <div className="space-y-2">
                   {fields.map((field, i) => (
-                    <EditCard field={field} i={i} remove={remove} />
+                    <EditCard key={field.id} i={i} remove={remove} />
                   ))}
                   <Button
                     className="mt-3 cursor-pointer"

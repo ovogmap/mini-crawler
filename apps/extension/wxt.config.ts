@@ -13,7 +13,8 @@ export default defineConfig({
     '@': resolve('./src'),
   },
   manifest: {
-    permissions: ['sidePanel', 'storage', 'tabs'], // sidePanel 권한 필수
+    permissions: ['sidePanel', 'storage', 'tabs', 'activeTab', 'scripting'], // scripting 권한 추가
+    host_permissions: ['<all_urls>'], // 모든 페이지에 content script 접근 허용
     action: {}, // 아이콘 클릭 시 기본 동작을 위해 비워둠
     side_panel: {
       default_path: 'entrypoints/sidepanel/index.html',
